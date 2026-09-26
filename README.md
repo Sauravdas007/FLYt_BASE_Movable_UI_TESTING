@@ -17,7 +17,6 @@ I contributed to the design and implementation of the **AI-powered autonomous UI
 
 The agent follows a structured decision and execution flow:
 
-```text
 User Intent
     ↓
 Intent Understanding
