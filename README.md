@@ -1,3 +1,48 @@
+# My Contribution
+
+I contributed to the design and implementation of the **AI-powered autonomous UI testing agent** for the live drone cockpit application.
+
+## Impact
+
+- Built a testing workflow that goes beyond simple UI clicking by validating whether the requested action actually produced the expected system state.
+- Implemented an **agentic execution loop** that can understand user intent, identify the required UI control, execute the action, verify the result, and recover when the expected outcome is not achieved.
+- Added resilience against **UI changes such as renamed controls and selector drift**, reducing dependence on fixed UI selectors.
+- Designed a **deterministic-first recovery strategy**, where known recovery methods are attempted before using an LLM fallback.
+- Added mechanisms for the agent to retain successful control mappings and reuse them during future executions.
+- Added failure scenarios to distinguish between **UI changes and genuine functional failures**.
+- Validated the agent against both successful and intentionally broken application states.
+- Helped turn the project from a conventional browser automation system into a more autonomous and verification-driven QA solution.
+
+## AI Agent Implementation
+
+The agent follows a structured decision and execution flow:
+
+```text
+User Intent
+    ↓
+Intent Understanding
+    ↓
+UI / Control Resolution
+    ↓
+Action Execution
+    ↓
+Real System-State Verification
+    ↓
+      ┌───────────────────┐
+      │ Verification Pass │
+      └─────────┬─────────┘
+                │
+          No / Failure
+                ↓
+      Deterministic Recovery
+                ↓
+          Re-Verification
+                ↓
+        LLM Fallback
+                ↓
+          Final Result
+
+
 # FlytBase Cockpit
 
 A small drone cockpit that runs on your laptop with one command. It has a live
