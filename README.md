@@ -16,7 +16,7 @@ I contributed to the design and implementation of the **AI-powered autonomous UI
 ## AI Agent Implementation
 
 The agent follows a structured decision and execution flow:
-
+```
 User Intent
     ↓
 Intent Understanding
@@ -40,7 +40,7 @@ Real System-State Verification
         LLM Fallback
                 ↓
           Final Result
-
+```
 
 # FlytBase Cockpit
 
